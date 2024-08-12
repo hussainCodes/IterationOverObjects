@@ -42,7 +42,7 @@ const movies = [
 	  year: 1994,
 	  genre: "Drama",
 	},
-  ];
+];
   
   function moviesList (movies){
 	movies.forEach(movie => console.log(movie.title));
@@ -60,8 +60,8 @@ function moviesIn1994(movies){
 
 
   function updateDarkKnight(movies){
-     movies.find((movie)=>movie.title == "The Dark Knight").genre = "Action/Drama";
-	 return movies;
+    return movies.find((movie)=>movie.title == "The Dark Knight").genre = "Action/Drama";
+	  
   }
  // console.log(updateDarkKnight(movies))
 
@@ -69,11 +69,10 @@ function moviesIn1994(movies){
 
 function groupMoviesByGenre(movies){
 
-	let moviesByGenre = {
+	return {
 		drama :  movies.filter((movie)=> movie.genre == "Drama" ? movie:false).map((movie)=>movie.title),
 		crime :  movies.filter((movie)=> movie.genre == "Crime" ? movie:false).map((movie)=>movie.title),
-		action :  movies.filter((movie)=> movie.genre == "Action" ? movie:false).map((movie)=>movie.title),
+		action :  movies.filter((movie)=> movie.genre == "Action" ? movie:false).map((movie)=>movie.title)
 	}
-	return moviesByGenre;
   }
   console.log(groupMoviesByGenre(movies))
