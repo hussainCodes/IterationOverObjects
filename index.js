@@ -6,15 +6,8 @@ let person = {
 
 person.email = "jackomlli@git.com";
 
-function hasKey(object, key){
-	
-if ( object[key] == undefined){
-	return false;
-}else{
-	return true;
-}
-}
-// hasKey(person, "name")
+
+let hasKey = (object, key) => object[key] == undefined ? false: true
 console.log(hasKey(person,"name"))
 console.log(hasKey(person,"hobby"))
 
@@ -52,34 +45,26 @@ const movies = [
   ];
   
   function moviesList (movies){
-	movies.forEach(movie => {
-		console.log(movie.title)
-	});
+	movies.forEach(movie => console.log(movie.title));
   }
-
   moviesList(movies);
 
   
-
-  function moviesIn1994(movies){
+function moviesIn1994(movies){
 	let count = 0;
-	movies.forEach((movie)=>{
-		if (movie["year"] == 1994){
-			count += 1;
-		}
-	});
+	movies.forEach((movie)=> movie["year"] == 1994 ? count += 1: false);
 	return count;
   }
-
-
   console.log(moviesIn1994(movies))
+
+
 
   function updateDarkKnight(movies){
      movies.find((movie)=>movie.title == "The Dark Knight").genre = "Action/Drama";
 	 return movies;
   }
-
  // console.log(updateDarkKnight(movies))
+
 
 
 function groupMoviesByGenre(movies){
@@ -91,5 +76,4 @@ function groupMoviesByGenre(movies){
 	}
 	return moviesByGenre;
   }
-
   console.log(groupMoviesByGenre(movies))
