@@ -84,9 +84,21 @@ const movies = [
   function groupMoviesByGenre(movies){
 
 	let moviesByGenre = {
-		drama :  movies.filter((movie)=> movie.genre == "Drama"),
-		crime : movies.filter((movie)=> movie.genre == "Crime"),
-		action : movies.filter((movie)=> movie.genre == "Action")
+		drama :  movies.filter((movie)=> {
+			if(movie.genre == "Drama"){
+				return movie;
+			}
+		}).map((movie)=>movie.title),
+		crime : movies.filter((movie)=>  {
+			if(movie.genre == "Crime"){
+				return movie;
+			}
+		}).map((movie)=>movie.title),
+		action : movies.filter((movie)=>  {
+			if(movie.genre == "Action"){
+				return movie;
+			}
+		}).map((movie)=>movie.title)
 	}
 
 	return moviesByGenre;
