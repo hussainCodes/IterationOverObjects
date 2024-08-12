@@ -81,26 +81,36 @@ const movies = [
 
  // console.log(updateDarkKnight(movies))
 
-  function groupMoviesByGenre(movies){
+//   function groupMoviesByGenre(movies){
+
+// 	let moviesByGenre = {
+// 		drama :  movies.filter((movie)=> {
+// 			if(movie.genre == "Drama"){
+// 				return movie;
+// 			}
+// 		}).map((movie)=>movie.title),
+// 		crime : movies.filter((movie)=>  {
+// 			if(movie.genre == "Crime"){
+// 				return movie;
+// 			}
+// 		}).map((movie)=>movie.title),
+// 		action : movies.filter((movie)=>  {
+// 			if(movie.genre == "Action"){
+// 				return movie;
+// 			}
+// 		}).map((movie)=>movie.title)
+// 	}
+
+// 	return moviesByGenre;
+//   }
+
+function groupMoviesByGenre(movies){
 
 	let moviesByGenre = {
-		drama :  movies.filter((movie)=> {
-			if(movie.genre == "Drama"){
-				return movie;
-			}
-		}).map((movie)=>movie.title),
-		crime : movies.filter((movie)=>  {
-			if(movie.genre == "Crime"){
-				return movie;
-			}
-		}).map((movie)=>movie.title),
-		action : movies.filter((movie)=>  {
-			if(movie.genre == "Action"){
-				return movie;
-			}
-		}).map((movie)=>movie.title)
+		drama :  movies.filter((movie)=> movie.genre == "Drama" ? movie:false).map((movie)=>movie.title),
+		crime :  movies.filter((movie)=> movie.genre == "Crime" ? movie:false).map((movie)=>movie.title),
+		action :  movies.filter((movie)=> movie.genre == "Action" ? movie:false).map((movie)=>movie.title),
 	}
-
 	return moviesByGenre;
   }
 
