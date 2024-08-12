@@ -60,8 +60,8 @@ function moviesIn1994(movies){
 
 
   function updateDarkKnight(movies){
-    return movies.find((movie)=>movie.title == "The Dark Knight").genre = "Action/Drama";
-	  
+     movies.find((movie)=>movie.title == "The Dark Knight").genre = "Action/Drama";
+	 return movies;
   }
  // console.log(updateDarkKnight(movies))
 
